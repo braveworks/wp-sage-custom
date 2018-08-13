@@ -11,7 +11,7 @@ function replace_assets()
         // WPの既存jQueryを無効化
         wp_deregister_script('jquery');
         // CDN版jQueryに変更
-        // wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', [], null, true);
+        wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', [], null, true);
     }
 
     //ヘッダーのスクリプトを削除

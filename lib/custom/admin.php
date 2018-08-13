@@ -129,16 +129,9 @@ function disable_visual_editor_in_page()
 {
     global $typenow;
     $post_id = $_GET['post'];
-    $target_post = array(
+    $target_post = [
         // 無効にする固定ページのID
-        '17', // 団体概要
-        '22', // 事業内容
-        '24', // 維持会員
-        '26', // 読書に関わる関連情報
-        '32', // 役員名簿
-        '469', // 事業報告
-        '1839', // 維持会員募集のご案内
-     );
+    ];
 
     if ($typenow == 'page' && in_array($post_id, $target_post, true)) {
         add_filter('user_can_richedit', 'disable_visual_editor_filter');
@@ -150,4 +143,3 @@ function disable_visual_editor_filter()
 }
 // add_action('load-post.php', 'disable_visual_editor_in_page');
 // add_action('load-post-new.php', 'disable_visual_editor_in_page');
-

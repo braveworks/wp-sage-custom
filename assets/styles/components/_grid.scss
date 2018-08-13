@@ -1,32 +1,3 @@
-
-.section-block {
-  display: block;
-  margin-right: -10px;
-  margin-bottom: 60px;
-  margin-left: -10px;
-  padding: 5% 15px;
-
-  @include mq (md) {
-    margin-right: -15px;
-    margin-left: -15px;
-    padding: 5%;
-
-    .sidebar-primary & {
-      margin-right: auto;
-      margin-left: auto;
-    }
-  }
-
-  &--wh {
-    background-color: $color-base;
-    box-shadow: $box-shadow;
-  }
-
-  &--border {
-    border: 1px solid $color-base;
-  }
-}
-
 .container {
   position: relative;
   display: block;
@@ -113,63 +84,5 @@
         @include make-col-offset($i);
       }
     }
-  }
-}
-
-// Grid system
-.main {
-  position: relative;
-  width: 100%;
-  min-height: 1px;
-
-  .sidebar-primary & {
-    // lg
-    @include mq(lg) {
-      padding-left: 0 !important;
-
-      @include make-col($main-columns - $sidebar-lg-columns);
-    }
-    // xl
-    @include mq(xl) {
-      @include make-col($main-columns - $sidebar-xl-columns);
-    }
-
-    & .section-block {
-      margin-right: 0;
-      margin-left: 0;
-    }
-  }
-}
-
-.sidebar {
-  position: relative;
-  width: 100%;
-  min-height: 1px;
-  // lg
-
-  @include mq(lg) {
-    padding-right: 0 !important;
-
-    @include make-col($sidebar-lg-columns);
-  }
-  // xl
-  @include mq(xl) {
-    @include make-col($sidebar-xl-columns);
-  }
-}
-
-.content {
-  &__row {
-    display: flex;
-    flex-wrap: wrap;
-
-    .sidebar-primary & {
-      margin-right: -15px;
-      margin-left: -15px;
-    }
-  }
-
-  .sidebar-primary & {
-    @extend .container;
   }
 }

@@ -11,7 +11,7 @@ function replace_assets()
         // WPの既存jQueryを無効化
         wp_deregister_script('jquery');
         // CDN版jQueryに変更
-        wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', [], null, true);
+        // wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', [], null, true);
     }
 
     //ヘッダーのスクリプトを削除
@@ -31,8 +31,9 @@ function replace_assets()
     //   is_archive()
     // ) {
     remove_action('wp_head', 'print_emoji_detection_script', 7);
-    remove_action('wp_print_styles', 'print_emoji_styles');
     remove_action('wp_head', 'wp_oembed_add_host_js');
+    remove_action('wp_print_styles', 'print_emoji_styles');
+    add_filter('emoji_svg_url', '__return_false');
     // }
 
     // generatorを非表示

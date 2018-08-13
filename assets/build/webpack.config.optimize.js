@@ -1,16 +1,16 @@
 'use strict'; // eslint-disable-line
 
-const path = require('path')
-const { default: ImageminPlugin } = require('imagemin-webpack-plugin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const path = require('path')
+const { default: ImageminPlugin } = require('imagemin-webpack-plugin')
+const imageminMozjpeg = require('imagemin-mozjpeg')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
-const config = require('./config');
+const config = require('./config')
 
 module.exports = {
   plugins: [
     new ImageminPlugin({
-      cacheFolder: path.join(config.paths.root, '.cache'),
+      // cacheFolder: path.join(config.paths.root, '.cache'),
       optipng: { optimizationLevel: 7 },
       gifsicle: { optimizationLevel: 3 },
       pngquant: { quality: '65-90', speed: 4 },
@@ -22,7 +22,7 @@ module.exports = {
         ],
       },
       plugins: [imageminMozjpeg({ quality: 75 })],
-      disable: (config.enabled.watcher),
+      disable: config.enabled.watcher,
     }),
     new UglifyJsPlugin({
       uglifyOptions: {
@@ -34,4 +34,4 @@ module.exports = {
       },
     }),
   ],
-};
+}

@@ -108,7 +108,7 @@
     "yargs": "~11.0.0"
   },
   "dependencies": {
-    "gsap": "1.20.3",
+    "gsap": "^2.0.1",
     "jquery": "^3.3.1",
     "sanitize.css": "^6.0.0",
     "webfontloader": "^1.6.28"

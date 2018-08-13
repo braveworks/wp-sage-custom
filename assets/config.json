@@ -1,0 +1,19 @@
+{
+  "entry": {
+    "main": [
+      "./scripts/main.js",
+      "./styles/main.scss"
+    ],
+    "customizer": [
+      "./scripts/customizer.js"
+    ]
+  },
+  "publicPath": "/wp-content/themes/wp-sage-custom",
+  "devUrl": "http://wpsagecutom.local",
+  "proxyUrl": "http://localhost:3000",
+  "cacheBusting": "[name]_[hash:8]",
+  "watch": [
+    "*.php",
+    "{lib,templates}/**/*.php"
+  ]
+}

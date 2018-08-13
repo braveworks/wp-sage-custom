@@ -1,0 +1,76 @@
+//** breakpoints
+$breakpoints:           (
+  "sm":                 "screen and (min-width: 576px)",
+  "md":                 "screen and (min-width: 768px)",
+  "lg":                 "screen and (min-width: 992px)",
+  "xl":                 "screen and (min-width: 1200px)",
+) !default;
+
+//** color
+$color-base:            white;
+$color-main:            #cc6467;
+$color-text:            #231815;
+$color-accent:          #f09c9a;
+
+// heading text color
+$color-text-br:         #a97d5c;
+$color-text-gl:         #9aa7b1;
+$color-text-gr:         #658f59;
+$color-text-rd:         #ec6d7b;
+
+// sns
+$color-twitter:         #00aced;
+$color-facebook:        #3b5998;
+$color-line:            #00c300;
+$color-instagram:       #d7464f;
+$color-instagram-bg:    radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+
+// font famiry
+$font-famiry-base:      "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-noto:             "Noto Sans JP";
+$sns-icon-fonts:        "sns";
+
+// other
+$cover-max-width:       1140px;
+$grid-gutter-width:     15px;
+$spacer:                15px;
+
+// box-shadow
+$box-shadow-lg:         0 5px 28px rgba(30, 32, 34, 0.02), 0 6px 100px rgba(30, 32, 34, 0.1);
+$box-shadow-sm:         0 10px 30px 0 rgba(0, 0, 0, 0.1);
+$box-shadow:            0 6px 6px 0 rgba(0, 0, 0, 0.02), 5px 20px 60px rgba(darken($color-text-rd, 25%), 0.1);
+
+//** easing function */
+
+// Cubic
+$easeInCubic:           cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$easeOutCubic:          cubic-bezier(0.215, 0.61, 0.355, 1);
+$easeInOutCubic:        cubic-bezier(0.645, 0.045, 0.355, 1);
+// Circ
+$easeInCirc:            cubic-bezier(0.6, 0.04, 0.98, 0.335);
+$easeOutCirc:           cubic-bezier(0.075, 0.82, 0.165, 1);
+$easeInOutCirc:         cubic-bezier(0.785, 0.135, 0.15, 0.86);
+// Expo
+$easeInExpo:            cubic-bezier(0.95, 0.05, 0.795, 0.035);
+$easeOutExpo:           cubic-bezier(0.19, 1, 0.22, 1);
+$easeInOutExpo:         cubic-bezier(1, 0, 0, 1);
+// Quad
+$easeInQuad:            cubic-bezier(0.55, 0.085, 0.68, 0.53);
+$easeOutQuad:           cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$easeInOutQuad:         cubic-bezier(0.455, 0.03, 0.515, 0.955);
+// Quart
+$easeInQuart:           cubic-bezier(0.895, 0.03, 0.685, 0.22);
+$easeOutQuart:          cubic-bezier(0.165, 0.84, 0.44, 1);
+$easeInOutQuart:        cubic-bezier(0.77, 0, 0.175, 1);
+// Quint
+$easeInQuint:           cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$easeOutQuint:          cubic-bezier(0.23, 1, 0.32, 1);
+$easeInOutQuint:        cubic-bezier(0.86, 0, 0.07, 1);
+// Sine
+$easeInSine:            cubic-bezier(0.47, 0, 0.745, 0.715);
+$easeOutSine:           cubic-bezier(0.39, 0.575, 0.565, 1);
+$easeInOutSine:         cubic-bezier(0.445, 0.05, 0.55, 0.95);
+// Back
+$easeInBack:            cubic-bezier(0.6, -0.28, 0.735, 0.045);
+$easeOutBack:           cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$easeInOutBack:         cubic-bezier(0.68, -0.55, 0.265, 1.55);

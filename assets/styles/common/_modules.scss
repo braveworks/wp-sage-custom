@@ -1,0 +1,83 @@
+.text-hide {
+  font-size: 0;
+  color: transparent;
+}
+
+.text-markerLine {
+  background: linear-gradient(transparent 60%, $color-base 60%);
+}
+
+.text-i-block > span {
+  display: inline-block;
+}
+
+.hide-md {
+  display: block;
+
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.block {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  &--lg {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.embedResponsive {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+
+  &::before {
+    display: block;
+    content: "";
+  }
+
+  & > iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  &--16by9 {
+    &::before {
+      padding-top: 56.25%;
+    }
+  }
+}
+
+.lazyload {
+  opacity: 0;
+}
+
+.lazyloading {
+  transition: opacity 1s;
+  opacity: 1;
+  background: darken($color-base, 10%) no-repeat center;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-frame {
+  padding-bottom: 15px;
+}
+

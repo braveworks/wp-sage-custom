@@ -9,8 +9,8 @@ use Roots\Sage\Wrapper;
 <?php get_template_part('templates/head'); ?>
 
 <body <?php body_class(); ?>>
+  <?php get_template_part('templates/ie-alert'); ?>
   <?php
-    get_template_part('templates/ie-alert');
     do_action('get_header');
     get_template_part('templates/header');
   ?>

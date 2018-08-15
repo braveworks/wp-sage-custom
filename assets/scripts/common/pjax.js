@@ -51,16 +51,14 @@ const Transiton = {
     })
     TweenLite.to(this.newContainer, 1, {
       autoAlpha: 1,
-      onComplete: () => {
-        TweenLite.set(this.newContainer, { cleaProps: 'all' })
-        this.done()
-      },
+      clearProps: 'all',
+      onComplete: () => this.done(),
     })
   },
 }
 
 /**
- * Barba.js 実行
+ * Barba.js初期化して実行
  */
 const pjax = () => {
   const util = new BarbaUtil()
@@ -77,7 +75,7 @@ const pjax = () => {
   Barba.Pjax.preventCheck = (event, el) => {
     if (
       Barba.Pjax.transitionProgress ||
-      Barba.HistoryManager.currentStatus().url === $(el).attr('href')
+      Barba.HistoryManager.currentStatus().url === $(el).prop('href')
     ) {
       event.preventDefault()
       return false

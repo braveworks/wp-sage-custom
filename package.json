@@ -108,6 +108,7 @@
     "yargs": "~11.0.0"
   },
   "dependencies": {
+    "barba.js": "^1.0.0",
     "gsap": "^2.0.1",
     "jquery": "^3.3.1",
     "sanitize.css": "^6.0.0",

@@ -1,9 +1,8 @@
 # WordPress Sage Cutom スターターテーマ
 
-Sage8 をベースにカスタマイズしたスターターテーマ。
+[Sage8](https://github.com/roots/sage/blob/8.5.4/README.md#theme-installation) をベースにカスタマイズしたスターターテーマ。
 
-- Gulp から Sage9 の Webpack に変更
-- PHP7 や Composer、Blade などが NG な環境用に。
+オリジナルはGulp＋Bowerですが、構成が古いため、assetsのビルド部分のみ[Sage9のWebpack](https://roots.io/sage/docs/theme-development-and-building/)に置き換えています。
 
 Based on Sage8.5.4 ｜ Webpack assets Builder : Based on Sage9.0.1
 

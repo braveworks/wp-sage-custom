@@ -26,21 +26,10 @@ Based on Sage8.5.4 ｜ Webpack assets Builder : Based on Sage9.0.1
 
 作業内容にあわせて`assets/config.json`の設定を変更する。
 
-- `publicPath`: 公開時のテーマディレクトリまでのサーバールートパスを指定
-- `devUrl`: 開発時のローカルサーバー URL
+- `publicPath`: 公開時のテーマディレクトリまでのサーバールートパスを指定（`/wp-content/themes/{theme_name}`）
+- `devUrl`: 開発時のローカルサーバーのURLを指定
 - `proxyUrl`: 開発時のプロキシ URL
 - `cacheBusting`: キャッシュバスター時のファイルネームフォーマット。例："[name]\_[hash:8]"（ファイル名をかえない場合は"[name]"）
-
-## Theme setup
-
-Edit `lib/setup.php` to enable or disable theme features, setup navigation menus, post thumbnail sizes, and sidebars.
-
-## Theme development
-
-- Run `yarn` from the theme directory to install dependencies
-- Update `assets/config.json` settings:
-  - `devUrl` should reflect your local development hostname
-  - `publicPath` should reflect your WordPress folder structure (`/wp-content/themes/sage` for non-[Bedrock](https://roots.io/bedrock/) installs)
 
 ### Build commands
 
@@ -48,9 +37,10 @@ Edit `lib/setup.php` to enable or disable theme features, setup navigation menus
 - `yarn build` — Compile and optimize the files in your assets directory
 - `yarn build:production` — Compile assets for production
 
-※WordPress の`home_url`と`site_url`が異なることで CSS などが表示されない場合は、`SAGE_DIST_PATH`にアセットパスを指定してビルドする。
+※本番とローカルで、WordPress の`home_url`と`site_url`が違うことでCSSなどが表示されない場合は、`SAGE_DIST_PATH`にルートからdistディレクトリまでのパスを指定してビルドする。
 
 ```sh
+# 例： 本番が WP/以下にある場合
 SAGE_DIST_PATH=/wp/wp-content/themes/{themename}/dist/ yarn build:production
 ```
 
@@ -84,3 +74,7 @@ SAGE_DIST_PATH=/wp/wp-content/themes/{themename}/dist/ yarn build:production
 ```
 
 > 記載のないファイルやディレクトリは、意味がわからない場合は無視してください。
+
+## ローカル環境の構築について
+
+ローカルで使用するWP環境は任意です（[Local by flywheel](https://local.getflywheel.com/)、[MAMP](https://www.mamp.info/en/)、[vccw](http://vccw.cc/)）が、その際のローカルドメインは、末尾が`.local` だと、BrowserSyncの動作が重くなるので、`.test`など別に変更してください。

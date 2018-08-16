@@ -3,6 +3,13 @@
 use Roots\Sage\Setup;
 use Roots\Sage\Wrapper;
 
+/**
+ * ベーステンプレート
+ *
+ * 参考：Theme Wrappers
+ * http://scribu.net/wordpress/theme-wrappers.html
+ *
+ */
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>

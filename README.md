@@ -51,10 +51,8 @@ Edit `lib/setup.php` to enable or disable theme features, setup navigation menus
 
 ※WordPress の`home_url`と`site_url`が異なることで CSS などが表示されない場合は、`SAGE_DIST_PATH`にアセットパスを指定してビルドする。
 
-例
-
 ```sh
-SAGE_DIST_PATH=/wp/wp-content/themes/themename/dist/ yarn build:production
+SAGE_DIST_PATH=/wp/wp-content/themes/{themename}/dist/ yarn build:production
 ```
 
 ## Theme structure
@@ -71,14 +69,13 @@ SAGE_DIST_PATH=/wp/wp-content/themes/themename/dist/ yarn build:production
 ├── lang/                 # 言語ファイル
 ├── lib/                  # functions.php で読み込む関数などのphp
 ├── templates/            # get_template_part で読み込むテンプレート
-├── vendor/
 ├── 404.php               # 404ページテンプレート
 ├── LICENSE.md            # sageライセンス
 ├── README.md
 ├── base.php              # ベーステンプレート（全テンプレートのラッパーになるテンプレート）
 ├── functions.php         # テーマ関数のfunctions.php 関数などはlib/ディレクトリからインクルードする
 ├── index.php             # index,archiveページのテンプレート
-├── package.json
+├── package.json          # npm設定
 ├── page.php              # 固定ページテンプレーﾄ
 ├── screenshot.png
 ├── search.php            # 検索結果ページテンプレート

@@ -8,8 +8,8 @@
       "./scripts/customizer.js"
     ]
   },
-  "publicPath": "/wp-content/themes/wp-sage-custom",
-  "devUrl": "http://wpsagecutom.test",
+  "publicPath": "/wp-content/themes/loftways",
+  "devUrl": "http://loftways.test",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [

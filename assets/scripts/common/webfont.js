@@ -8,9 +8,7 @@ import WebFont from 'webfontloader'
 
 const fontsCommon = {
   google: {
-    families: [
-      'Material+Icons',
-    ],
+    families: ['Material+Icons'],
   },
   // custom: {
   //   families: ['Noto Sans JP'],

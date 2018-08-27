@@ -8,9 +8,9 @@ import { TweenLite } from 'gsap'
 
 class FakeScroll {
   constructor(target, speed) {
-    this.height = 0
     this.target = target || document.querySelector('.wrapper') || null
     this.ticking = false
+    this.height = 0
     this.position = {
       x: 0,
       y: 0,
@@ -59,7 +59,7 @@ class FakeScroll {
 
   positionUpdate() {
     TweenLite.set(this.target, { y: -this.position.y, force3D: true })
-    // Scroll.target.style.transform = `translate3d(0px,${-Scroll.position.y}px,0)`;
+    // this.target.style.transform = `translate3d(0px,${-this.position.y}px,0)`;
   }
 
   screenSize() {
@@ -68,9 +68,9 @@ class FakeScroll {
 
   setup() {
     this.target.style.position = 'fixed'
+    this.sizeUpdate()
     window.addEventListener('scroll', () => this.onScroll())
     window.addEventListener('resize', debounce(() => this.sizeUpdate(), 10))
-    this.sizeUpdate()
   }
 }
 export default FakeScroll

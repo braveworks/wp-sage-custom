@@ -1,48 +1,54 @@
+import isMobile from 'ismobilejs'
 import { TweenMax, Power4 } from 'gsap'
 import 'gsap/src/uncompressed/plugins/ScrollToPlugin'
 
-const $window = $(window)
-
-const jsScroll = event => {
-  let delta = 0
-
-  if (!event) {
-    event = window.event
+class WheelScroll {
+  constructor() {
+    this.delta = 0
   }
 
-  if (event.wheelDelta) {
-    delta = event.wheelDelta / 120
-  } else if (event.detail) {
-    delta = -event.detail / 3
-  }
+  static update(event) {
+    if (!event) {
+      event = window.event
+    }
 
-  if (delta) {
-    const scrollTop = $window.scrollTop()
-    const finScroll = scrollTop - parseInt(delta * 100) * 3
+    if (event.wheelDelta) {
+      this.delta = event.wheelDelta / 120
+    } else if (event.detail) {
+      this.delta = -event.detail / 3
+    }
 
-    TweenMax.to($window, 2, {
-      scrollTo: {
-        y: finScroll,
+    if (this.delta) {
+      const finScroll = window.scrollY - parseInt(this.delta * 100) * 3
+
+      TweenMax.to(window, 2.2, {
+        scrollTo: {
+          y: finScroll,
+          autoKill: true,
+        },
+        ease: Power4.easeOut,
         autoKill: true,
-      },
-      ease: Power4.easeOut,
-      autoKill: true,
-      overwrite: 5,
-    })
-  }
+        overwrite: 5,
+        force3D: true,
+      })
+    }
 
-  if (event.preventDefault) {
-    event.preventDefault()
-  }
+    if (event.preventDefault) {
+      event.preventDefault()
+    }
 
-  event.returnValue = false
-}
-
-const wheelScroll = () => {
-  document.onmousewheel = () => jsScroll()
-  if (document.addEventListener) {
-    document.addEventListener('DOMMouseScroll', jsScroll, false)
+    event.returnValue = false
   }
 }
 
-export default wheelScroll
+function scrollInit() {
+  if (!isMobile.any) {
+    if (document.addEventListener) {
+      document.addEventListener('wheel', WheelScroll.update, false)
+    } else {
+      document.onmousewheel = () => WheelScroll.update()
+    }
+  }
+}
+
+export default scrollInit()

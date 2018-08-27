@@ -24,53 +24,53 @@ class FakeScroll {
     this.speed = typeof speed == 'undefined' ? 0.1 : speed
 
     if (this.target) {
-      this.setup()
+      this._setup()
     }
   }
 
-  onScroll() {
+  _onScroll() {
     this.scroll.power += 100
     this.scroll.y = window.pageYOffset || document.documentElement.scrollTop
     if (!this.ticking) {
-      window.requestAnimationFrame(() => this.update())
+      window.requestAnimationFrame(() => this._update())
     }
     this.ticking = true
   }
 
-  update() {
+  _update() {
     this.position.y += (this.scroll.y - this.position.y) * this.speed
     this.position.y = Number(this.position.y.toFixed(1))
     const dis = this.scroll.y - this.position.y
     if (dis < 1 && dis > -1) {
-      this.positionUpdate()
+      this._positionUpdate()
       this.ticking = false
     } else {
-      window.requestAnimationFrame(() => this.update())
+      window.requestAnimationFrame(() => this._update())
     }
-    this.positionUpdate()
+    this._positionUpdate()
     this.position.oldY = this.position.y
   }
 
-  sizeUpdate() {
+  _sizeUpdate() {
     this.height = this.target.offsetHeight
     TweenLite.set(document.body, { height: this.height })
-    this.positionUpdate()
+    this._positionUpdate()
   }
 
-  positionUpdate() {
+  _positionUpdate() {
     TweenLite.set(this.target, { y: -this.position.y, force3D: true })
     // this.target.style.transform = `translate3d(0px,${-this.position.y}px,0)`;
   }
 
-  screenSize() {
+  _screenSize() {
     return windowSize()
   }
 
-  setup() {
+  _setup() {
     this.target.style.position = 'fixed'
-    this.sizeUpdate()
-    window.addEventListener('scroll', () => this.onScroll())
-    window.addEventListener('resize', debounce(() => this.sizeUpdate(), 10))
+    this._sizeUpdate()
+    window.addEventListener('scroll', () => this._onScroll())
+    window.addEventListener('resize', debounce(() => this._sizeUpdate(), 10))
   }
 }
 export default FakeScroll

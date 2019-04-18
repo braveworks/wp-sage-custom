@@ -2,7 +2,7 @@
 
 [Sage8](https://github.com/roots/sage/blob/8.5.4/README.md#theme-installation) をベースにカスタマイズしたスターターテーマ。
 
-オリジナルはGulp＋Bowerですが、構成が古いため、assetsのビルド部分のみ[Sage9のWebpack](https://roots.io/sage/docs/theme-development-and-building/)に置き換えています。
+オリジナルはGulp＋Bowerですが、assetsのビルドを[Sage9のWebpack](https://roots.io/sage/docs/theme-development-and-building/)に置き換えています。
 
 Based on Sage8.5.4 ｜ Webpack assets Builder : Based on Sage9.0.1
 
@@ -26,10 +26,10 @@ Based on Sage8.5.4 ｜ Webpack assets Builder : Based on Sage9.0.1
 
 作業内容にあわせて`assets/config.json`の設定を変更する。
 
-- `publicPath`: 公開時のテーマディレクトリまでのサーバールートパスを指定（`/wp-content/themes/{theme_name}`）
+- `publicPath`: 公開時のテーマディレクトリまでのサーバールートパスを指定（ex: `/wp-content/themes/{theme_name}`）
 - `devUrl`: 開発時のローカルサーバーのURLを指定
-- `proxyUrl`: 開発時のプロキシ URL
-- `cacheBusting`: キャッシュバスター時のファイルネームフォーマット。例："[name]\_[hash:8]"（ファイル名をかえない場合は"[name]"）
+- `proxyUrl`: 開発時のプロキシURL
+- `cacheBusting`: キャッシュ対策ファイル名フォーマット。（ex: "[name]\_[hash:8]" ファイル名をかえない場合は "[name]"）
 
 ### Build commands
 
@@ -75,6 +75,7 @@ SAGE_DIST_PATH=/wp/wp-content/themes/{themename}/dist/ yarn build:production
 
 > 記載のないファイルやディレクトリは、意味がわからない場合は無視してください。
 
-## ローカル環境の構築について
+## 備考
 
-ローカルで使用するWP環境は任意です（[Local by flywheel](https://local.getflywheel.com/)、[MAMP](https://www.mamp.info/en/)、[vccw](http://vccw.cc/)）が、その際のローカルドメインは、末尾が`.local` だと、BrowserSyncの動作が重くなるので、`.test`など別に変更してください。
+ローカル環境でのドメインが`.local` だと、BrowserSyncの動作が重くなります。
+Local by Flywheel などを使用する場合は`.test`などにしてください。
